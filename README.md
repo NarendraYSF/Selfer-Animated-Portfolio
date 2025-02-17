@@ -19,7 +19,7 @@ Selfer Animated Portfolio is a sleek and modern personal portfolio template with
 
 1. **Clone the repository:**
    ```sh
-   git clone https://github.com/yourusername/Selfer-Animated-Portfolio.git
+   git clone https://github.com/NarendraYSF/Selfer-Animated-Portfolio.git
    ```
 2. **Navigate to the project folder:**
    ```sh
