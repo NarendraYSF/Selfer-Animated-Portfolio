@@ -1,0 +1,115 @@
+/*-------------------------------------------
+  -- Navbar
+-------------------------------------------*/
+.navbar {
+  font-size: 14px;
+  font-weight: 500;
+  transition: var(--tr);
+  text-transform: uppercase;
+  padding-top: 0;
+  padding-bottom: 0;
+
+  .ts-background {
+    transition: 1s ease;
+  }
+}
+
+.nav-link.active {
+  &:after {
+    opacity: 1;
+  }
+}
+.nav-link {
+  position: relative;
+  &:after {
+    border-top: 3px solid var(--color-primary);
+    content: "";
+    height: 3px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: 1s ease;
+  }
+}
+.navbar-toggler {
+  margin-left: auto;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+[class*="navbar-expand"] {
+  .navbar-nav {
+    .nav-link {
+      padding-top: 8px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(0,0,0,.1);
+    }
+  }
+}
+
+/*XL*/
+@media (min-width: 1200px) {
+  .navbar.navbar-expand-xl {
+    .navbar-nav {
+      align-items: center;
+      .nav-link {
+        padding-top: 16px;
+        padding-bottom: 16px;
+        border-bottom: none;
+      }
+    }
+    .ts-background {
+      opacity: 0;
+    }
+  }
+}
+/*LG*/
+@media (min-width: 992px) {
+  .navbar.navbar-expand-lg {
+    .navbar-nav {
+      align-items: center;
+      .nav-link {
+        padding-top: 16px;
+        padding-bottom: 16px;
+        border-bottom: none;
+      }
+    }
+    .ts-background {
+      opacity: 0;
+    }
+  }
+}
+/*MD*/
+@media (min-width: 768px) {
+  .navbar.navbar-expand-md {
+    .navbar-nav {
+      align-items: center;
+      .nav-link {
+        padding-top: 16px;
+        padding-bottom: 16px;
+        border-bottom: none;
+      }
+    }
+    .ts-background {
+      opacity: 0;
+    }
+  }
+}
+/*SM*/
+@media (min-width: 576px) {
+  .navbar.navbar-expand-sm {
+    .navbar-nav {
+      align-items: center;
+      .nav-link {
+        padding-top: 16px;
+        padding-bottom: 16px;
+        border-bottom: none;
+      }
+    }
+    .ts-background {
+      opacity: 0;
+    }
+  }
+}

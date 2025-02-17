@@ -1,0 +1,238 @@
+/*-------------------------------------------
+  -- Buttons
+-------------------------------------------*/
+.btn {
+  border-radius: 0;
+  box-shadow: var(--bs-md);
+  display: inline-block;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 12px 20px;
+  position: relative;
+  outline: none !important;
+  text-transform: uppercase;
+
+  &:hover {
+    .fa-arrow-right {
+      transform: translateX(8px);
+    }
+  }
+
+  &.ts-btn-arrow {
+    &:after {
+      content: "\f061";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      font-size: 10px;
+      margin-left: 12px;
+      position: relative;
+      top: -1px;
+      vertical-align: middle;
+    }
+  }
+
+  span {
+    transition: var(--tr);
+  }
+
+  .status {
+    bottom: 0;
+    height: 22px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 24px;
+    .spinner {
+      left: 5px;
+      transition: var(--tr);
+      top: 3px;
+      position: absolute;
+      opacity: 0;
+    }
+    .status-icon {
+      border-radius: 50%;
+      left: 0;
+      opacity: 0;
+      font-size: 10px;
+      padding: 4px 7px;
+      position: relative;
+      transition: var(--tr);
+      z-index: 1;
+      transform: scale(0);
+      &.valid {
+        background-color: var(--green);
+      }
+      &.invalid {
+        background-color: var(--red);
+      }
+    }
+  }
+
+  &.processing {
+    span {
+      opacity: .2;
+    }
+    .spinner {
+      opacity: 1;
+    }
+  }
+
+  &.done {
+    .ts-spinner {
+      opacity: 0;
+    }
+    .status-icon {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}
+
+.ts-btn-effect {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  vertical-align: middle;
+  &:hover {
+    .ts-hidden {
+      transform: translateX(0%);
+    }
+    .ts-visible {
+       transform: translateX(100%);
+     }
+  }
+  .ts-visible {
+    transform: translateX(0%);
+    transition: var(--tr);
+  }
+  .ts-hidden {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    transition: var(--tr);
+  }
+}
+
+.btn-primary {
+  &:hover, &:focus, &:active {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    box-shadow: none;
+  }
+
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn-lg {
+  padding: 12px 24px;
+  font-size: 18px;
+}
+
+.btn-sm {
+  font-size: 13px;
+  padding: 6px 16px;
+}
+
+.btn-xs {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 11px;
+  text-transform: uppercase;
+}
+
+[class*="btn-outline-"] {
+  box-shadow: none;
+}
+
+.ts-link-arrow-effect {
+  overflow: hidden;
+  display: inline-block;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--color-white);
+  position: relative;
+  padding-right: 32px;
+
+  /*
+  &:hover {
+    color: var(--color-white);
+    &:before {
+      animation: ts-link-arrow-effect-animation-in;
+      animation-fill-mode: forwards;
+      animation-duration: .4s;
+      animation-timing-function: cubic-bezier(.6,.01,0,1);
+    }
+    span {
+      transform: translateX(0%);
+    }
+  }
+  */
+
+  &:before {
+    animation: ts-link-arrow-effect-animation-out;
+    animation-fill-mode: forwards;
+    animation-duration: .4s;
+    animation-timing-function: cubic-bezier(.6,.01,0,1);
+    background-color: var(--color-primary);
+    bottom: 0;
+    height: 2px;
+    margin: auto;
+    left: 0;
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    transform: scaleX(.2);
+    transform-origin: left center;
+    z-index: -1;
+  }
+
+  span {
+    position: relative;
+    transform: translateX(-200%);
+    display: inline-block;
+    transition: .6s cubic-bezier(.6,.01,0,1);
+  }
+
+}
+
+@keyframes ts-link-arrow-effect-animation-in {
+  0% {
+    transform-origin: left center;
+    transform: scaleX(.2);
+  }
+  70% {
+    transform-origin: left center;
+    transform: scaleX(1);
+  }
+  71% {
+    transform-origin: right center;
+  }
+  100% {
+    transform-origin: right center;
+    transform: scaleX(.2);
+  }
+}
+@keyframes ts-link-arrow-effect-animation-out {
+  0% {
+    transform-origin: right center;
+    transform: scaleX(.2);
+  }
+  70% {
+    transform-origin: right center;
+  }
+  71% {
+    transform-origin: left center;
+    transform: scaleX(1);
+  }
+  100% {
+    transform-origin: left center;
+    transform: scaleX(.2);
+  }
+}

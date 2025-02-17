@@ -1,0 +1,54 @@
+/*-------------------------------------------
+  -- Hero
+-------------------------------------------*/
+#ts-hero {
+  display: flex;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  .ts-background-image {
+    background-position: top center;
+  }
+
+  &.ts-animate-hero-items {
+    h1:not(.ts-bubble-border) {
+      opacity: 0;
+      transition: var(--tr-cubic);
+      transition-duration: 1s;
+      transform: translateY(20px);
+    }
+    .ts-background {
+      opacity: 0;
+      transition: 1s ease;
+      transition-delay: 1.3s;
+    }
+    .ts-social-icons {
+      opacity: 0;
+      transition: var(--tr);
+      transform: translateX(5px) rotate(0.002deg);
+      transition-delay: 1.2s;
+      transition-duration: 1s;
+    }
+  }
+}
+
+body {
+  &.loading-done {
+    #ts-hero {
+      &.ts-animate-hero-items {
+        .ts-background {
+          opacity: 1;
+        }
+        h1:not(.ts-bubble-border) {
+          opacity: 1;
+          transform: translateY(0px);
+        }
+        .ts-social-icons {
+          opacity: 1;
+          transform: translateX(0px) rotate(0.002deg);
+        }
+      }
+    }
+  }
+}

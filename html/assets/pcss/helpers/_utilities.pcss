@@ -1,0 +1,53 @@
+/*-------------------------------------------
+  -- Utilities
+-------------------------------------------*/
+.ts-element {
+  position: relative;
+}
+
+/* Social Icons */
+.ts-social-icons {
+  font-size: 120%;
+  a {
+    padding: 2px 4px;
+    color: var(--color-grey);
+  }
+}
+
+/* Overlay */
+.ts-has-overlay {
+  position: relative;
+  &:after {
+    background-color: #000;
+    content: "";
+    height: 100%;
+    left: 0;
+    opacity: .5;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+  }
+}
+
+/* Flip x */
+.ts-flip-x {
+  transform: scaleY(-1);
+}
+/* Flip Y */
+.ts-flip-y {
+  transform: scaleX(-1);
+}
+
+.ts-has-talk-arrow {
+  position: relative;
+  &:after {
+    border-style: solid;
+    border-width: 10px 10px 0 0;
+    border-color: var(--color-primary) transparent transparent transparent;
+    bottom: -10px;
+    content: "";
+    left: 16px;
+    position: absolute;
+  }
+}

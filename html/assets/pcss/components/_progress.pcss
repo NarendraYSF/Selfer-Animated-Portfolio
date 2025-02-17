@@ -1,0 +1,42 @@
+/*-------------------------------------------
+  -- Progress
+-------------------------------------------*/
+.progress {
+  background-color: transparent;
+  border-radius: 0;
+  height: 48px;
+  margin-bottom: 32px;
+  position: relative;
+  overflow: visible;
+
+  .ts-progress-value {
+    border: 2px solid var(--color-white);
+    bottom: 0;
+    padding: 2px 6px;
+    position: absolute;
+    left: 0%;
+    transform: translateX(-16px);
+
+    &:after {
+      border-style: solid;
+      border-width: 5px 5px 0 0;
+      border-color: var(--color-white) transparent transparent transparent;
+      bottom: -7px;
+      content: "";
+      left: 6px;
+      position: absolute;
+    }
+  }
+
+  .progress-bar {
+    background-color: var(--color-primary);
+    bottom: 0;
+    height: 3px;
+    position: absolute;
+    width: 0%;
+  }
+
+  .progress-bar, .ts-progress-value {
+    transition: 1s ease;
+  }
+}
